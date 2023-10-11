@@ -26,7 +26,9 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 <body>
 
@@ -138,8 +140,9 @@
         <div class="columns is-centered has-text-centered">
           <div class="column is-five-fifths">
             <div class="content has-text-justified">
-              <p align="center" style="margin:0;">From left to right: original video, 20x magnified video, targeted white cat with TTA, targeted black cat with TTA</p>
-              <p align="center">(TTA: test-time adaptation)</p>
+              <!--<p align="center" style="margin:0;">From left to right: original video, 20x magnified video, targeted white cat with TTA, targeted black cat with TTA</p>-->
+              <p align="center" style="margin:0;">Original Video | 20x Magnified Video | 20x Targeted White Cat (TTA) | 20x Targeted Black Cat (TTA)</p>
+              <p align="center">*TTA: test-time adaptation | Source: <a href="#ref1">[1]</a> </p>
             </div>
           </div>
         </div>
@@ -157,9 +160,9 @@
         <h2 class="title is-3">TL;DR</h2>
         <div class="content has-text-justified">
           <p>
-            We present a method to magnify subtle motion that can be trained without groundtruth 
-            magnified videos. Furthermore, our method is flexible to allow users only magnify specific 
-            area, or overfit on a single video for better performance.
+          We present a method to magnify subtle motions that can be trained <em>without</em> ground truth 
+            magnified videos. Our method also allows users to "target" the magnification, only magnifying specific 
+            regions or objects. Furthermore, being unsupervised our method also supports test-time adaptation for improved performance.
           </p>
         </div>
       </div>
@@ -184,7 +187,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">(Top: original video; Bottom: 20x magnified video)</h2>
+                <h2 class="title is-6" align="center">Top: Original Video | Bottom: 20x Magnified Video | Source <a href="#ref2" style="color:#3273dc">[2]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -387,11 +390,10 @@
 
 <!-- Flexibility. -->
 <section class="section">
-  <h2 class="title is-3" align="center">Our Flexibility</h2>
   <!-- Targeted magnification. -->
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-4" align="center">Targeted Magnification</h2>
+      <h2 class="title is-3" align="center">Targeted Magnification</h2>
 
       <div id="targeted" class="carousel results-carousel2" align="center">
         <div class="item item-tunningforks-masked">
@@ -459,10 +461,10 @@
       <div class="column is-two-fifths">
         <div class="content has-text-justified">
           <p>
-            At test time, we can also modify our model to assign a different magnification factor per pixel,
-            by using user-supplied segmentation maps of spatially-varying map magnification factors, 
-            to enable magnification of individual objects using user-supplied segmentation maps. This is 
-            useful when we want to focus on a specific object, as in the cat sequence, or when we want to 
+            Our model can also magnify different areas of a video different amounts. We achieve this by
+            designing our architecture to accept a spatial map of magnification factors. This "targeting"
+            ability works even when our method is trained only on spatial maps of constant magnification factors.
+            This ability is useful when we want to focus on a specific object, as in the cat sequence, or when we want to 
             ignore an object that may be challenging to magnify, such as the quickly moving arm in the bookshelf
             sequence.
           </p>
@@ -476,7 +478,7 @@
   <!-- Test time adaptation. -->
   <!-- <div class="hero-body"> -->
     <div class="container">
-      <h2 class="title is-4" align="center">Test-Time Adaptation</h2>
+      <h2 class="title is-3" align="center">Test-Time Adaptation</h2>
 
       <div id="tta" class="carousel results-carousel2" align="center">
         <div class="item item-twocats-tta">
@@ -530,7 +532,7 @@
         <div class="content has-text-justified">
           <p>
             Because we are using a self-supervised loss, we can further finetune our model 
-            at inference time on a single video, improve generation quality for out-of-domain videos.
+            at inference time on a single video, improving generation quality for out-of-domain videos.
           </p>
         </div>
       </div>
@@ -602,7 +604,7 @@
       <div class="content has-text-justified">
         <p>
           Motion magnification has the potential to allow researchers to visualize subtle physical motions
-          in real world for pratical applications, such as vibration analysis, machine inspection or material deformation.
+          in the real world for practical applications, such as vibration analysis, machine inspection, or material deformation.
         </p>
       </div>
     </div>
@@ -633,10 +635,10 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Related Link</h2>
+        <h2 class="title is-3">Related Works</h2>
         <div class="content has-text-justified">
           <p>
-            There's a lot of excellent work that was relevant to our paper.
+            There's a lot of excellent work that is relevant to our paper.
           </p>
           <!-- <p>
             Motion magnification techniques have traditionally been categorized
@@ -650,19 +652,24 @@
           </p> -->
           <p>
             The optimal approach to framing motion magnification remains an open question. While our technique 
-            focuses on training without groundtruth videos, there are also well-established Eulerian methods 
+            focuses on training without ground truth videos, there are also well-established Eulerian methods 
             and supervised learning-based approaches (See more information at <a href="https://people.csail.mit.edu/mrub/evm/">1</a>, 
-            <a href="https://people.csail.mit.edu/nwadhwa/phase-video/">2</a>, and <a href="https://people.csail.mit.edu/nwadhwa/phase-video/">3</a>).
-            These diverse methods provide a spectrum of tools for addressing motion magnification, each 
-            with its own advantages and potential applications.
+            <a href="https://people.csail.mit.edu/nwadhwa/phase-video/">2</a>, and <a href="https://people.csail.mit.edu/tiam/deepmag/">3</a>).
+            <!--These diverse methods provide a spectrum of tools for addressing motion magnification, each 
+              with its own advantages and potential applications.-->
+            Check out this <a href="https://people.csail.mit.edu/mrub/vidmag/">website</a> for an excellent
+            collection of work on motion magnification.
           </p>
           <p>
-            Check this <a href="https://people.csail.mit.edu/mrub/vidmag/">website</a> for an excellent
-            collection of work on motion magnification at MIT CSAIL.
+            In addition, the idea for optical flow differentiation comes from <a href="https://dangeng.github.io/CorrWiseLosses/">4</a>.
           </p>
-          <p>
-            We also take inspiration from <a href="https://dangeng.github.io/CorrWiseLosses/">Comparing Correspondences</a> 
-            that showed that optical flow can be used to define a loss function.
+
+          <h4 class="title is-4">Video Sources</h4>
+          <p id="ref1">
+            [1] <a href="https://www.youtube.com/watch?v=T4U6JKT-c0c">Totally Normal. "12 hours of cats sleeping." <em>YouTube</em> video, 2018.</a>
+          </p>
+          <p id="ref2">
+          [2] <a href="">Justin G. Chen et al. <em>"Structural Modal Identification through High Speed Camera Video: Motion Magnification."</em> Proceedings of the 32nd International Modal Analysis Conference (2014)</a>
           </p>
         </div>
       </div>
