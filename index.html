@@ -101,7 +101,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/"
+                <a href="https://github.com/dangeng/FlowMag"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -111,7 +111,7 @@
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/"
+                <a href="https://github.com/zhaoyingpan/FlowMagData"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
@@ -179,15 +179,45 @@
       <div id="results-carousel" class="carousel results-carousel" align="center">
 
         
+        <div class="item item-butterfly">
+          <video preload="none" poster="./static/thumbnails/butterfly_x5_thumbnail.jpg" id="butterfly" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/butterfly_x5.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <div class="content has-text-justified">
+                <h2 class="title is-6" align="center">Top: Original Video | Bottom: 5x Magnified Video | Source <a href="#ref2" style="color:#3273dc">[2]</a></h2>
+                <h2 class="title is-6" align="center"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="item item-drum">
+          <video preload="none" poster="./static/thumbnails/drum_shortened_x5_thumbnail.jpg" id="drum" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/drum_shortened_x5.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <div class="content has-text-justified">
+                <h2 class="title is-6" align="center">Top: Original Video | Bottom: 5x Magnified Video | Source <a href="#ref3" style="color:#3273dc">[3]</a></h2>
+                <h2 class="title is-6" align="center"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <div class="item item-pole">
-          <video preload="none" poster="./static/thumbnails/pole_rotated_thumbnail.jpg" id="pole" autoplay controls muted loop playsinline height="100%">
+          <video preload="none" poster="./static/thumbnails/pole_rotated_thumbnail.png" id="pole" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/pole_rotated.mp4"
                     type="video/mp4">
           </video>
           <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Top: Original Video | Bottom: 20x Magnified Video | Source <a href="#ref2" style="color:#3273dc">[2]</a></h2>
+                <h2 class="title is-6" align="center">Top: Original Video | Bottom: 20x Magnified Video | Source <a href="#ref3" style="color:#3273dc">[3]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -337,14 +367,24 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Approach Overview</h2>
         <div class="content has-text-justified">
-          <img src="./static/images/overview.jpg" alt="Overview">
+          <img src="./static/images/overview.png" alt="Overview">
           <p>
             Given a reference frame \(I_0\), a frame to be magnified \(I_t\), 
+            and a map of per-pixel magnification factors $\alpha$, we predict 
+            a magnified frame \(\tilde{I}_t\). We minimize two losses that each 
+            use an off-the-shelf optical flow estimator \(\mathcal{F}(\cdot, \cdot)\). 
+            First, we use a magnification loss \(\mathcal{L}_{\text{mag}}\) that 
+            encourages the optical flow of the generated video to be \(\alpha\) times 
+            as large as that of the input video. And second, we also include a 
+            consistency loss \(\mathcal{L}_{\text{color}}\) that measures the 
+            visual similarity of corresponding pixels in \(I_t\) and \(\tilde{I}_t\).
+            
+            <!-- Given a reference frame \(I_0\), a frame to be magnified \(I_t\), 
             a differentiable optical flow estimator \(\mathcal{F}(\cdot, \cdot)\), 
             and the predicted magnified frame \(\tilde{I}_t\), we optimize a motion 
             magnification loss \(\mathcal{L}_{\text{mag}}\) which encourages correctly 
             magnified motion as well as a visual consistency loss \(\mathcal{L}_{\text{color}}\) 
-            which regularizes the magnification loss and encourages correctly colored predictions.
+            which regularizes the magnification loss and encourages correctly colored predictions. -->
           </p>
         </div>
       </div>
@@ -362,6 +402,24 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
+            We present a simple, self-supervised method for magnifying subtle motions in video: given an input video 
+            and a magnification factor, we manipulate the video such that its new optical flow is scaled by the 
+            desired amount. To train our model, we propose a loss function that estimates the optical flow of the 
+            generated video and penalizes how far if deviates from the given magnification factor. Thus, training 
+            involves differentiating through a pretrained optical flow network.
+          </p>
+          <p>
+            Since our model is self-supervised, we can further improve its performance through test-time adaptation, 
+            by finetuning it on the input video. It can also be easily extended to magnify the motions of only 
+            user-selected objects. Our approach avoids the need for synthetic magnification datasets that have 
+            been used to train prior learning-based approaches. Instead, it leverages the existing capabilities 
+            of off-the-shelf motion estimators.
+          </p>
+          <p>
+            We demonstrate the effectiveness of our method through evaluations of both visual quality and quantitative metrics on a range of real-world and synthetic videos, and we show our method works for both supervised and unsupervised optical flow methods.
+          </p>
+          
+          <!-- <p>
             Magnifying motion in videos allows us to reveal subtle details that may be invisible to the naked eye. 
             However, this task presents considerable challenges, due to the absence of "ground truth" magnified 
             videos. In this paper, we revisit the classic Lagrangian approach in motion magnification and integrate 
@@ -378,13 +436,15 @@
             does not require any ground truth labels, we can also perform test-time adaptation, further improving our 
             generalization to out-of-domain and complex videos. We demonstrate the effectiveness of our approach through 
             evaluations of both visual quality and quantitative metrics on a diverse range of real-world videos and synthetic data.
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
   </div>
 </section>
 <!--/ Abstract. -->
+
+
 
 
 
@@ -618,7 +678,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Supplementary Video</h2>
+        <h2 class="title is-3">Video Explaination</h2>
         <div class="publication-video">
           <iframe src="https://www.youtube.com/embed/ecUkb5N8aW4?rel=0&amp;showinfo=0"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -630,6 +690,145 @@
 <!--/ Video. -->
 
 
+<!-- Comparison. -->
+<section class="section">
+  <h2 class="title is-3" align="center">Comparison with Oh <em>et al.</em> <a href="https://people.csail.mit.edu/tiam/deepmag/">[3]</a></h2>
+    <div class="container">
+      <div id="application" class="carousel results-carousel2" align="center" width="80%" height="80%">
+
+
+        <div class="item item-twocats-comp">
+          <video preload="none" poster="./static/thumbnails/twocats_x20_dm_comp_thumbnail.jpg" id="twocats-comp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/twocats_x20_dm_comp.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-five-fifths">
+              <div class="content has-text-justified">
+                <h2 class="title is-6" align="center">(From Left to Right: 20x magnified by Oh <em>et al.</em>), 20x magnified by ours)</h2>
+                <h2 class="title is-6" align="center"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="item item-tap-comp">
+          <video preload="none" poster="./static/thumbnails/tap_x20_dm_comp_thumbnail.jpg" id="tap-comp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/tap_x20_dm_comp.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-five-fifths">
+              <div class="content has-text-justified">
+                <h2 class="title is-6" align="center">(From Left to Right: 20x magnified by Oh <em>et al.</em>), 20x magnified by ours)</h2>
+                <h2 class="title is-6" align="center"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item item-camel-comp">
+          <video preload="none" poster="./static/thumbnails/camel_x20_dm_comp_thumbnail.jpg" id="camel-comp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/camel_x20_dm_comp.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-five-fifths">
+              <div class="content has-text-justified">
+                <h2 class="title is-6" align="center">(From Left to Right: 20x magnified by Oh <em>et al.</em>), 20x magnified by ours)</h2>
+                <h2 class="title is-6" align="center"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item item-train1-masked">
+          <video preload="none" poster="./static/thumbnails/train1_resized_x20_dm_comp_thumbnail.jpg" id="train1-masked" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/train1_resized_x20_dm_comp.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-five-fifths">
+              <div class="content has-text-justified">
+                <h2 class="title is-6" align="center">(From Left to Right: 20x magnified by Oh <em>et al.</em>), 20x magnified by ours)</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!--/ Comparison. -->
+
+
+
+<!-- Comparison. -->
+<section class="section">
+  <h2 class="title is-3" align="center">Failure Cases</h2>
+    <div class="container">
+      <div id="application" class="carousel results-carousel2" align="center" width="80%" height="80%">
+        <div class="item item-twocats-comp">
+          <video preload="none" poster="./static/thumbnails/twocats_x20_dm_comp_thumbnail.jpg" id="twocats-comp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/twocats_x20_dm_comp.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-five-fifths">
+              <div class="content has-text-justified">
+                <h2 class="title is-6" align="center">(From Left to Right: 20x magnified by Oh <em>et al.</em>), 20x magnified by ours)</h2>
+                <h2 class="title is-6" align="center"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="item item-tap-comp">
+          <video preload="none" poster="./static/thumbnails/tap_x20_dm_comp_thumbnail.jpg" id="tap-comp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/tap_x20_dm_comp.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-five-fifths">
+              <div class="content has-text-justified">
+                <h2 class="title is-6" align="center">(From Left to Right: 20x magnified by Oh <em>et al.</em>), 20x magnified by ours)</h2>
+                <h2 class="title is-6" align="center"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item item-camel-comp">
+          <video preload="none" poster="./static/thumbnails/camel_x20_dm_comp_thumbnail.jpg" id="camel-comp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/camel_x20_dm_comp.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-five-fifths">
+              <div class="content has-text-justified">
+                <h2 class="title is-6" align="center">(From Left to Right: 20x magnified by Oh <em>et al.</em>), 20x magnified by ours)</h2>
+                <h2 class="title is-6" align="center"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item item-train1-masked">
+          <video preload="none" poster="./static/thumbnails/train1_resized_x20_dm_comp_thumbnail.jpg" id="train1-masked" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/train1_resized_x20_dm_comp.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-five-fifths">
+              <div class="content has-text-justified">
+                <h2 class="title is-6" align="center">(From Left to Right: 20x magnified by Oh <em>et al.</em>), 20x magnified by ours)</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!--/ Comparison. -->
 <!-- Related links. -->
 <section class="section">
   <div class="container is-max-desktop">
@@ -653,30 +852,47 @@
           <p>
             The optimal approach to framing motion magnification remains an open question. While our technique 
             focuses on training without ground truth videos, there are also well-established Eulerian methods 
-            and supervised learning-based approaches (See more information at <a href="https://people.csail.mit.edu/mrub/evm/">1</a>, 
+            and supervised learning-based approaches 
+            (See more information at <a href="https://people.csail.mit.edu/mrub/evm/">1</a>, 
             <a href="https://people.csail.mit.edu/nwadhwa/phase-video/">2</a>, and <a href="https://people.csail.mit.edu/tiam/deepmag/">3</a>).
             <!--These diverse methods provide a spectrum of tools for addressing motion magnification, each 
               with its own advantages and potential applications.-->
             Check out this <a href="https://people.csail.mit.edu/mrub/vidmag/">website</a> for an excellent
             collection of work on motion magnification.
           </p>
-          <p>
+          <!-- <p>
             In addition, the idea for optical flow differentiation comes from <a href="https://dangeng.github.io/CorrWiseLosses/">4</a>.
-          </p>
-
-          <h4 class="title is-4">Video Sources</h4>
-          <p id="ref1">
-            [1] <a href="https://www.youtube.com/watch?v=T4U6JKT-c0c">Totally Normal. "12 hours of cats sleeping." <em>YouTube</em> video, 2018.</a>
-          </p>
-          <p id="ref2">
-          [2] <a href="">Justin G. Chen et al. <em>"Structural Modal Identification through High Speed Camera Video: Motion Magnification."</em> Proceedings of the 32nd International Modal Analysis Conference (2014)</a>
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
   </div>
 </section>
 <!--/ Related links. -->
+
+
+<!-- Video Sources. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video Sources</h2>
+        <div class="content has-text-justified">
+          <p id="ref1">
+            [1] <a href="https://www.youtube.com/watch?v=T4U6JKT-c0c">Totally Normal. "12 hours of cats sleeping." <em>YouTube</em> video, 2018.</a>
+          </p>
+          <p id="ref2">
+            [2] <a href="">Linjie Yang et al. <em>"The 2nd Large-scale Video Object Segmentation Challenge - video object segmentation track."</em></a>
+          </p>
+          <p id="ref3">
+            [3] <a href="">Justin G. Chen et al. <em>"Structural Modal Identification through High Speed Camera Video: Motion Magnification."</em> Proceedings of the 32nd International Modal Analysis Conference (2014)</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Video Sources. -->
 
 
 <!-- BibTeX. -->
