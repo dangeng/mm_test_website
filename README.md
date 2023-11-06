@@ -1,8 +1,8 @@
-# Nerfies
+# Self-Supervised Motion Magnification by Backpropagating Through Optical Flow
 
-This is the repository that contains source code for the [website](https://github.com) of our work: Self-Supervised Motion Magnification by Backpropagating Through Optical Flow.
+This is the repository that contains source code for the [website](https://github.com/dangeng/FlowMag) of our work: Self-Supervised Motion Magnification by Backpropagating Through Optical Flow.
 
-If you find Nerfies useful for your work please cite:
+If you find our work useful for your work please cite:
 ```
 ```
 
