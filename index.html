@@ -26,6 +26,7 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="./static/js/boomerang.js"></script>
   <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
@@ -50,6 +51,11 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">Self-Supervised Motion Magnification by Backpropagating Through Optical Flow</h1>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Thirty-seventh Conference on Neural Information Processing Systems (NeurIPS), 2023.</span>
+          </div>
+
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://zhaoyingpan.github.io/">Zhaoying Pan</a><sup>*</sup>,</span>
@@ -64,7 +70,7 @@
             <span class="author-block">University of Michigan</span>
           </div>
           <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>*</sup>Equal Contributions</span>
+            <span class="author-block"><sup>*</sup>Denotes Equal Contributions.</span>
           </div>
 
           <div class="column has-text-centered">
@@ -140,7 +146,7 @@
         <div class="columns is-centered has-text-centered">
           <div class="column is-five-fifths">
             <div class="content has-text-justified">
-              <h2 class="title is-6" align="center">Source: <a href="#ref-cats">[1]</a></h2>
+              <h2 class="title is-6" align="center">Source: <a href="#ref-cats" style="color:#3273dc">[1]</a></h2>
             </div>
           </div>
         </div>
@@ -171,7 +177,7 @@
 
 
 <!-- Videos. -->
-<section class="hero is-light is-small">
+<section class="section">
   <div class="hero-body">
     <div class="container">
       
@@ -184,7 +190,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-tuningforks">[2]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-tuningforks" style="color:#3273dc">[2]</a></h2>
               </div>
             </div>
           </div>
@@ -196,7 +202,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-column-drum">[4]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-column-drum" style="color:#3273dc">[4]</a></h2>
               </div>
             </div>
           </div>
@@ -208,31 +214,31 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-vos">[3]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-vos" style="color:#3273dc">[3]</a></h2>
               </div>
             </div>
           </div>
-
         </div>
       </div>
       
-      <div id="results-carousel" class="carousel results-carousel" align="center">
+      <div id="results-carousel" class="carousel results-carousel2" align="center">
 
         <div class="item item-eagle">
           <h2 class="title is-0" align="center">Swipe for more videos</h2>
+
           <video preload="none" poster="./static/thumbnails/eagle_thumbnail.jpg" id="eagle" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/eagle.mp4"
-                    type="video/mp4">
-            </video>
+            <source src="./static/videos/eagle.mp4" type="video/mp4">
+          </video>
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-vos">[3]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-vos" style="color:#3273dc">[3]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
           </div>
         </div>
+          
         
         <div class="item item-twocats">
           <video preload="none" poster="./static/thumbnails/twocats_thumbnail.jpg" id="twocats" autoplay controls muted loop playsinline height="100%">
@@ -242,7 +248,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-cats">[1]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-cats" style="color:#3273dc">[1]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -257,7 +263,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-column-drum">[4]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-column-drum" style="color:#3273dc">[4]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -272,7 +278,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-nivr">[6]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-nivr" style="color:#3273dc">[6]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -287,7 +293,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: Taken by Ourselves</h2>
+                <h2 class="title is-6" align="center"></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -302,7 +308,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-phase">[5]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-phase" style="color:#3273dc">[5]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -317,7 +323,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#"></a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-phase" style="color:#3273dc"></a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -332,7 +338,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-phase">[5]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-phase" style="color:#3273dc">[5]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -347,7 +353,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-candle">[10]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-candle" style="color:#3273dc">[11]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -362,7 +368,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-nivr">[6]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-nivr" style="color:#3273dc">[6]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -377,7 +383,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-nivr">[6]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-nivr" style="color:#3273dc">[6]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -459,10 +465,10 @@
 <!-- Flexibility. -->
 <section class="section">
   <!-- Targeted magnification. -->
-  <div class="hero-body">
+  <div class="container is-max-desktop">
     <h2 class="title is-3" align="center">Targeted Magnification</h2>
     <div class="columns is-centered has-text-centered">
-      <div class="column is-two-fifths">
+      <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p>
             Our model gives us the ability to vary the magnification factor spatially 
@@ -484,7 +490,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-tuningforks">[2]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-tuningforks" style="color:#3273dc">[2]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -499,7 +505,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-phase">[5]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-phase" style="color:#3273dc">[5]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -511,6 +517,14 @@
             <source src="./static/videos/bookshelf_masked.mp4"
                     type="video/mp4">
           </video>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-five-fifths">
+              <div class="content has-text-justified">
+                <h2 class="title is-6" align="center">Source: <a href="#ref-bookshelf" style="color:#3273dc">[7]</a></h2>
+                <h2 class="title is-6" align="center"></h2>
+              </div>
+            </div>
+          </div>
         </div> -->
 
         <div class="item item-twocats-masked">
@@ -521,7 +535,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-cats">[1]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-cats" style="color:#3273dc">[1]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -532,14 +546,16 @@
     </div>
   </div>
   <!--/ Targeted magnification. -->
+</section>
   
-
+<section class="section">
   <!-- Test time adaptation. -->
-    
+  <div class="container is-max-desktop">
+
     <h2 class="title is-3" align="center">Test-Time Adaptation</h2>
 
     <div class="columns is-centered has-text-centered">
-      <div class="column is-two-fifths">
+      <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p>
             Since our model is entirely self-supervised, we can finetune it at inference time 
@@ -558,7 +574,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-cats">[1]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-cats" style="color:#3273dc">[1]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -573,7 +589,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-phase">[5]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-phase" style="color:#3273dc">[5]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -588,7 +604,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-column-drum">[4]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-column-drum" style="color:#3273dc">[4]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -597,6 +613,7 @@
 
       </div>
     </div>
+  </div>
   <!--/ Test time adaptation. -->
 </section>
 <!--/ Flexibility. -->
@@ -605,10 +622,12 @@
 
 <!-- Applications. -->
 <section class="section">
+  <div class="container is-max-desktop">
+
   <h2 class="title is-3" align="center">Future Applications</h2>
 
     <div class="columns is-centered has-text-centered">
-      <div class="column is-two-fifths">
+      <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p>
             Motion magnification has the potential to allow researchers to visualize subtle physical motions
@@ -630,7 +649,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-boiler">[8]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-boiler" style="color:#3273dc">[9]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -645,7 +664,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-engine">[9]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-engine" style="color:#3273dc">[10]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -660,7 +679,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-brain">[7]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-brain" style="color:#3273dc">[8]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -668,6 +687,7 @@
         </div>
       </div>
     </div>
+  </div>
 </section>
 <!--/ Applications. -->
 
@@ -692,7 +712,7 @@
 <!-- Comparison. -->
 <section class="section">
   <h2 class="title is-3" align="center">Comparison with Oh <em>et al.</em> <a href="https://people.csail.mit.edu/tiam/deepmag/">[3]</a></h2>
-    <div class="container">
+  <div class="container is-max-desktop">
       <div id="application" class="carousel results-carousel2" align="center" width="80%" height="80%">
 
 
@@ -704,7 +724,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-cats">[1]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-cats" style="color:#3273dc">[1]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -719,7 +739,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: Taken by Ourselves</h2>
+                <h2 class="title is-6" align="center"></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -734,7 +754,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-nivr">[6]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-nivr" style="color:#3273dc">[6]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -742,14 +762,14 @@
         </div>
 
         <div class="item item-train1-comp">
-          <video preload="none" poster="./static/thumbnails/train1_resized_x20_dm_comp_thumbnail.jpg" id="train1-comp" autoplay controls muted loop playsinline height="100%">
+          <video preload="none" poster="./static/thumbnails/train1_resized_x20_dm_comp_thumbnail.jpg" id="train1-comp" controls muted loop playsinline height="100%">
             <source src="./static/videos/train1_resized_x20_dm_comp.mp4"
                     type="video/mp4">
           </video>
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-train1">[5]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-train1" style="color:#3273dc">[12]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -764,10 +784,12 @@
 
 <!-- Failure. -->
 <section class="section">
+  <div class="container is-max-desktop">
+
   <h2 class="title is-3" align="center">Failure Cases</h2>
   
   <div class="columns is-centered has-text-centered">
-    <div class="column is-two-fifths">
+    <div class="column is-four-fifths">
       <div class="content has-text-justified">
         <p>
           While our method demonstrates favorable performance in most videos, there are cases 
@@ -795,7 +817,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-phase">[5]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-phase" style="color:#3273dc">[5]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -810,7 +832,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-nivr">[6]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-nivr" style="color:#3273dc">[6]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -825,7 +847,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-phase">[5]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-phase" style="color:#3273dc">[5]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -833,7 +855,7 @@
         </div>
       </div>
     </div>
-
+  </div>
 </section>
 <!--/ Failure. -->
 
@@ -843,7 +865,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Related Works</h2>
+        <h2 class="title is-3">Related Work</h2>
         <div class="content has-text-justified">
           <p>
             There's a lot of excellent work that is relevant to our paper.
@@ -905,20 +927,23 @@
           <p id="ref-nivr">
             [6] Mai, Long, and Feng Liu. "Motion-adjustable neural implicit video representation." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2022.
           </p>
+          <p id="ref-bookshelf">
+            [7] Liu, Ce, et al. "Motion magnification." ACM transactions on graphics (TOG) 24.3 (2005): 519-526.
+          </p>
           <p id="ref-brain">
-            [7] Terem, Itamar, et al. "Revealing sub‐voxel motions of brain tissue using phase‐based amplified MRI (aMRI)." Magnetic resonance in medicine 80.6 (2018): 2549-2559.
+            [8] Terem, Itamar, et al. "Revealing sub‐voxel motions of brain tissue using phase‐based amplified MRI (aMRI)." Magnetic resonance in medicine 80.6 (2018): 2549-2559.
           </p>
           <p id="ref-boiler">
-            [8] <a href="https://youtu.be/PhESmDSunC0?list=LL&t=38">Vibration, dynamics and noise. "Motion amplification camera examples." <em>YouTube</em> video, 2018.</a>
+            [9] <a href="https://youtu.be/PhESmDSunC0?list=LL&t=38">Vibration, dynamics and noise. "Motion amplification camera examples." <em>YouTube</em> video, 2018.</a>
           </p>
           <p id="ref-engine">
-            [9] <a href="https://www.youtube.com/watch?v=ZxOSGhsuqz0&list=WL&index=2">RDI Technologies. "Motion Amplification of an engine starting." <em>YouTube</em> video, 2016.</a>
+            [10] <a href="https://www.youtube.com/watch?v=ZxOSGhsuqz0&list=WL&index=2">RDI Technologies. "Motion Amplification of an engine starting." <em>YouTube</em> video, 2016.</a>
           </p>
           <p id="ref-candle">
-            [10] Xue, Tianfan, et al. "Refraction wiggles for measuring fluid depth and velocity from video." Computer Vision–ECCV 2014: 13th European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part III 13. Springer International Publishing, 2014.
+            [11] Xue, Tianfan, et al. "Refraction wiggles for measuring fluid depth and velocity from video." Computer Vision–ECCV 2014: 13th European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part III 13. Springer International Publishing, 2014.
           </p>
           <p id="ref-train1">
-            [11] <a href="https://www.pexels.com/video/an-electric-train-passing-by-12955565/">Samed Gojak. "An Electric Train Passing by." <em>Pexels</em> video, 2022.</a>
+            [12] <a href="https://www.pexels.com/video/an-electric-train-passing-by-12955565/">Samed Gojak. "An Electric Train Passing by." <em>Pexels</em> video, 2022.</a>
           </p>
         </div>
       </div>
@@ -931,8 +956,18 @@
 <!-- BibTeX. -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title" align="center">BibTeX</h2>
-    <pre><code></code></pre>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title" align="center">BibTeX</h2>
+    <pre><code>@inproceedings{pan2023selfsupervised,
+  title={Self-Supervised Motion Magnification by Backpropagating Through Optical Flow},
+  author={Zhaoying Pan and Daniel Geng and Andrew Owens},
+  booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
+  year={2023},
+  url={https://openreview.net/forum?id=hLPJ7xLbNF}
+}</code></pre>
+      </div>
+    </div>
   </div>
 </section>
 <!--/ BibTeX. -->
