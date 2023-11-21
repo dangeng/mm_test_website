@@ -128,7 +128,7 @@
               <!-- Dataset Link. -->
               <span class="link-block">
                 <a href="https://github.com/zhaoyingpan/flowmagdata"
-                   class="external-link button is-normal is-rounded is-dark">
+                   class="external-link button is-normal is-rounded is-light">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
@@ -138,7 +138,7 @@
               <!-- Poster Link. -->
               <span class="link-block">
                 <a href="https://drive.google.com/"
-                   class="external-link button is-normal is-rounded is-dark">
+                   class="external-link button is-normal is-rounded is-light">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
@@ -783,7 +783,7 @@
     <div class="column is-four-fifths">
       <div class="content has-text-justified">
         <p>
-          While our method demonstrates favorable performance in most videos, there are cases 
+          <!-- While our method demonstrates favorable performance in most videos, there are cases 
           where it falls short. One particular failure mode occurs when a video contains thin 
           structures such as tree branches and guitar strings. In these cases it appears the 
           flow network has incorrectly estimated the optical flow during training, causing our 
@@ -792,7 +792,12 @@
           smoothness assumptions of flow estimators, and we expect results to improve as optical 
           flow methods get more accurate. Another common failure is incorrectly magnifying background 
           that has zero flow. This happens when small errors from the optical flow model are magnified, 
-          as shown in the camera sequence.
+          as shown in the camera sequence. -->
+          While our method demonstrates favorable performance in most videos, there are cases 
+          where it falls short. One particular failure mode occurs when a video contains thin 
+          structures such as tree branches and guitar strings. Another common failure is incorrectly magnifying background 
+          that has zero flow. This happens when small errors from the optical flow model are magnified, 
+          as shown in the camera sequence. 
         </p>
       </div>
     </div>
