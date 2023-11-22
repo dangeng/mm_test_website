@@ -185,9 +185,9 @@
         <h2 class="title is-3">TL;DR</h2>
         <div class="content has-text-justified">
           <p>
-          We present a method to magnify subtle motions that can be trained <em>without</em> ground truth 
+          We magnify subtle motions that can be trained <em>without</em> ground truth 
             magnified videos. Our method also allows users to "target" the magnification, only magnifying specific 
-            regions or objects. Furthermore, being unsupervised our method also supports test-time adaptation for improved performance.
+            regions or objects. Since our method is self-supervised, we can finetune the model at test time to improve its peformance.
           </p>
         </div>
       </div>
@@ -242,24 +242,7 @@
         </div>
       </div>
       
-      <div id="results-carousel" class="carousel results-carousel2" align="center">
-
-        <div class="item item-eagle">
-          <h2 class="title is-0" align="center">Swipe for more videos</h2>
-
-          <video preload="none" poster="./static/thumbnails/eagle_thumbnail.jpg" id="eagle" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/eagle.mp4" type="video/mp4">
-          </video>
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-five-fifths">
-              <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-vos" style="color:#3273dc">[3]</a></h2>
-                <h2 class="title is-6" align="center"></h2>
-              </div>
-            </div>
-          </div>
-        </div>
-          
+      <div id="results-carousel" class="carousel results-carousel2" align="center">          
         
         <div class="item item-twocats">
           <video preload="none" poster="./static/thumbnails/twocats_thumbnail.jpg" id="twocats" autoplay controls muted loop playsinline height="100%">
@@ -399,42 +382,6 @@
   </div>
 </section>
 <!--/ Overview. -->
-
-
-<!-- Abstract. -->
-<section class="section" style="margin: -50px;">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            We present a simple, self-supervised method for magnifying subtle motions in video: given an input video 
-            and a magnification factor, we manipulate the video such that its new optical flow is scaled by the 
-            desired amount. To train our model, we propose a loss function that estimates the optical flow of the 
-            generated video and penalizes how far if deviates from the given magnification factor. Thus, training 
-            involves differentiating through a pretrained optical flow network.
-          </p>
-          <p>
-            Since our model is self-supervised, we can further improve its performance through test-time adaptation, 
-            by finetuning it on the input video. It can also be easily extended to magnify the motions of only 
-            user-selected objects. Our approach avoids the need for synthetic magnification datasets that have 
-            been used to train prior learning-based approaches. Instead, it leverages the existing capabilities 
-            of off-the-shelf motion estimators.
-          </p>
-          <p>
-            We demonstrate the effectiveness of our method through evaluations of both visual quality and quantitative 
-            metrics on a range of real-world and synthetic videos, and we show our method works for both supervised 
-            and unsupervised optical flow methods.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!--/ Abstract. -->
-
-
 
 
 
