@@ -332,7 +332,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-candle" style="color:#3273dc">[11]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-candle" style="color:#3273dc">[10]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -418,28 +418,28 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-train1" style="color:#3273dc">[12]</a>, starting from frame 300.</h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-train1" style="color:#3273dc">[11]</a>, starting from frame 300.</h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- <div class="item item-bookshelf-masked">
-          <video preload="none" poster="./static/thumbnails/bookshelf_masked_thumbnail.jpg" id="bookshelf-masked" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/bookshelf_masked.mp4"
+        <div class="item item-hammerhit-masked">
+          <video preload="none" poster="./static/thumbnails/hammerhit_masked_thumbnail.jpg" id="hammerhit-masked" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/hammerhit_masked.mp4"
                     type="video/mp4">
           </video>
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-bookshelf" style="color:#3273dc">[7]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-phase" style="color:#3273dc">[5]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
           </div>
-        </div> -->
-
+        </div>
+  
         <div class="item item-twocats-masked">
           <video preload="none" poster="./static/thumbnails/twocats_masked_thumbnail.jpg" id="twocats-masked" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/twocats_masked.mp4"
@@ -562,7 +562,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-boiler" style="color:#3273dc">[9]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-boiler" style="color:#3273dc">[8]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -577,7 +577,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-engine" style="color:#3273dc">[10]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-engine" style="color:#3273dc">[9]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -592,7 +592,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-brain" style="color:#3273dc">[8]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-brain" style="color:#3273dc">[7]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -667,7 +667,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-boiler" style="color:#3273dc">[9]</a></h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-boiler" style="color:#3273dc">[8]</a></h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -697,7 +697,7 @@
           <div class="columns is-centered has-text-centered">
             <div class="column is-five-fifths">
               <div class="content has-text-justified">
-                <h2 class="title is-6" align="center">Source: <a href="#ref-train1" style="color:#3273dc">[12]</a>, starting from frame 300.</h2>
+                <h2 class="title is-6" align="center">Source: <a href="#ref-train1" style="color:#3273dc">[11]</a>, starting from frame 300.</h2>
                 <h2 class="title is-6" align="center"></h2>
               </div>
             </div>
@@ -720,16 +720,6 @@
     <div class="column is-four-fifths">
       <div class="content has-text-justified">
         <p>
-          <!-- While our method demonstrates favorable performance in most videos, there are cases 
-          where it falls short. One particular failure mode occurs when a video contains thin 
-          structures such as tree branches and guitar strings. In these cases it appears the 
-          flow network has incorrectly estimated the optical flow during training, causing our 
-          model to either "bleed" motion into the stationary background or fail to magnify the 
-          motion at all (see flower and guitar sequences). The failure may be attributed to 
-          smoothness assumptions of flow estimators, and we expect results to improve as optical 
-          flow methods get more accurate. Another common failure is incorrectly magnifying background 
-          that has zero flow. This happens when small errors from the optical flow model are magnified, 
-          as shown in the camera sequence. -->
           While our method demonstrates favorable performance in most videos, there are cases 
           where it falls short. One particular failure mode occurs when a video contains thin 
           structures such as tree branches and guitar strings. Another common failure is incorrectly magnifying background 
@@ -803,30 +793,15 @@
           <p>
             There's a lot of excellent work that is relevant to our paper.
           </p>
-          <!-- <p>
-            Motion magnification techniques have traditionally been categorized
-            into <a href="https://people.csail.mit.edu/celiu/motionmag/motionmag.html">Lagrangian</a> 
-            and <a href="https://people.csail.mit.edu/mrub/evm/">Eulerian</a> approaches. Click to check
-            the earliest work.
-          </p>
-          <p>
-            <a href="https://people.csail.mit.edu/tiam/deepmag/">Learning-based Video Motion Magnification</a> 
-            is the first learning-based approach for motion magnification.
-          </p> -->
           <p>
             The optimal approach to framing motion magnification remains an open question. While our technique 
             focuses on training without ground truth videos, there are also well-established Eulerian methods 
             and supervised learning-based approaches 
             (See more information at <a href="https://people.csail.mit.edu/mrub/evm/">1</a>, 
             <a href="https://people.csail.mit.edu/nwadhwa/phase-video/">2</a>, and <a href="https://people.csail.mit.edu/tiam/deepmag/">3</a>).
-            <!--These diverse methods provide a spectrum of tools for addressing motion magnification, each 
-              with its own advantages and potential applications.-->
             Check out this <a href="https://people.csail.mit.edu/mrub/vidmag/">website</a> for an excellent
             collection of work on motion magnification.
           </p>
-          <!-- <p>
-            In addition, the idea for optical flow differentiation comes from <a href="https://dangeng.github.io/CorrWiseLosses/">4</a>.
-          </p> -->
         </div>
       </div>
     </div>
@@ -860,23 +835,20 @@
           <p id="ref-nivr">
             [6] Mai, Long, and Feng Liu. "Motion-adjustable neural implicit video representation." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2022.
           </p>
-          <p id="ref-bookshelf">
-            [7] Liu, Ce, et al. "Motion magnification." ACM transactions on graphics (TOG) 24.3 (2005): 519-526.
-          </p>
           <p id="ref-brain">
-            [8] Terem, Itamar, et al. "Revealing sub‐voxel motions of brain tissue using phase‐based amplified MRI (aMRI)." Magnetic resonance in medicine 80.6 (2018): 2549-2559.
+            [7] Terem, Itamar, et al. "Revealing sub‐voxel motions of brain tissue using phase‐based amplified MRI (aMRI)." Magnetic resonance in medicine 80.6 (2018): 2549-2559.
           </p>
           <p id="ref-boiler">
-            [9] Vibration, dynamics and noise. <a href="https://youtu.be/PhESmDSunC0?list=LL&t=38">"Motion amplification camera examples."</a> <em>YouTube</em> video, 2018.
+            [8] Vibration, dynamics and noise. <a href="https://youtu.be/PhESmDSunC0?list=LL&t=38">"Motion amplification camera examples."</a> <em>YouTube</em> video, 2018.
           </p>
           <p id="ref-engine">
-            [10] RDI Technologies. <a href="https://www.youtube.com/watch?v=ZxOSGhsuqz0&list=WL&index=2">"Motion Amplification of an engine starting."</a> <em>YouTube</em> video, 2016.
+            [9] RDI Technologies. <a href="https://www.youtube.com/watch?v=ZxOSGhsuqz0&list=WL&index=2">"Motion Amplification of an engine starting."</a> <em>YouTube</em> video, 2016.
           </p>
           <p id="ref-candle">
-            [11] Xue, Tianfan, et al. "Refraction wiggles for measuring fluid depth and velocity from video." Computer Vision–ECCV 2014: 13th European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part III 13. Springer International Publishing, 2014.
+            [10] Xue, Tianfan, et al. "Refraction wiggles for measuring fluid depth and velocity from video." Computer Vision–ECCV 2014: 13th European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part III 13. Springer International Publishing, 2014.
           </p>
           <p id="ref-train1">
-            [12] Samed Gojak. <a href="https://www.pexels.com/video/an-electric-train-passing-by-12955565/">"An Electric Train Passing by."</a> <em>Pexels</em> video, 2022.
+            [11] Samed Gojak. <a href="https://www.pexels.com/video/an-electric-train-passing-by-12955565/">"An Electric Train Passing by."</a> <em>Pexels</em> video, 2022.
           </p>
         </div>
       </div>
